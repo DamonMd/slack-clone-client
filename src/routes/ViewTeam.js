@@ -10,16 +10,28 @@ import Channels from "../components/Channels";
 import Teams from "../components/Teams";
 import Header from "../components/Header";
 import Messages from "../components/Messages";
-import Input from "../components/Input";
+import Input from "../components/SendMessage";
+
+const channelList = [{ id: 1, name: "general" }, { id: 2, name: "partytime" }];
+const messageList = [{ id: 4, user: "mike" }, { id: 9, user: "steve" }];
+const teamList = [
+  { id: 88, name: "Wapopopopo" },
+  { id: 12, name: "The Lagoonies" }
+];
+const channel = "partytime";
 
 export default () => (
   <AppLayout>
-    <Teams>Team</Teams>
-    <Channels>Channelaaas</Channels>
-    <Header>head</Header>
+    <Teams teams={teamList}>Team</Teams>
+    <Channels
+      channels={channelList}
+      messages={messageList}
+      team={"The Lagoonies"}
+    >
+      Channelaaas
+    </Channels>
+    <Header channel={"partytime"} />
     <Messages>Messages</Messages>
-    <Input>
-      <input type="text" placeholder="things go in here" />
-    </Input>
+    <Input channel={channel} />
   </AppLayout>
 );

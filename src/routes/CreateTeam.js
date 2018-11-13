@@ -77,7 +77,6 @@ class CreateTeam extends React.Component {
 
   render() {
     const { name, errors } = this;
-
     const errorList = [];
 
     if (errors.nameError) {
@@ -99,7 +98,6 @@ class CreateTeam extends React.Component {
               fluid
             />
           </Form.Field>
-
           <Button onClick={this.onSubmit}>Submit</Button>
         </Form>
         {errorList.length > 0 ? (
