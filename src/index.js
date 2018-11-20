@@ -11,10 +11,6 @@ import { setContext } from "apollo-link-context";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloLink } from "apollo-link";
 
-// const client = new ApolloClient({
-//   uri: "http://localhost:4000/graphql"
-// });
-
 const httpLink = createHttpLink({
   uri: "http://localhost:4000/graphql"
 });

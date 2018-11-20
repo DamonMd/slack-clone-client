@@ -36,22 +36,23 @@ const TeamNameHeader = styled.h1`
 
 const Bubble = ({ on = true }) => (on ? <Green>&.</Green> : "o");
 
-const Channels = ({ channels, messages, team }) => {
+const Channels = ({ channels, messages, teamName, username }) => {
   const channelList = channels.map(({ id, name }) => {
     return <ChannelListItem key={id}># {name}</ChannelListItem>;
   });
 
-  const messageList = messages.map(({ id, user }) => {
+  const messageList = messages.map(({ id, name }) => {
     return (
       <ChannelListItem key={id}>
-        <Bubble /> {user}
+        <Bubble /> {name}
       </ChannelListItem>
     );
   });
   return (
     <ChannelWrapper>
       <div>
-        <TeamNameHeader>{team}</TeamNameHeader>
+        <TeamNameHeader>{teamName}</TeamNameHeader>
+        <p>{username}</p>
       </div>
       <div>
         <p>Channels</p>

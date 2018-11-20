@@ -34,8 +34,9 @@ const TeamListItem = styled.li`
   }
 `;
 const Teams = ({ teams }) => {
-  const teamList = teams.map(({ id, name }) => {
-    return <TeamListItem key={id}>{name.slice(0, 1)}</TeamListItem>;
+  console.log("teams in the team comp", teams);
+  const teamList = teams.map(({ id, letter }) => {
+    return <TeamListItem key={id}>{letter}</TeamListItem>;
   });
 
   return (
