@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { list } from "postcss";
+import { Icon } from "semantic-ui-react";
 
 const paddingLeft = "padding-left: 10px";
 
@@ -36,7 +36,13 @@ const TeamNameHeader = styled.h1`
 
 const Bubble = ({ on = true }) => (on ? <Green>&.</Green> : "o");
 
-const Channels = ({ channels, messages, teamName, username }) => {
+const Channels = ({
+  channels,
+  messages,
+  teamName,
+  username,
+  onAddChannelClick
+}) => {
   const channelList = channels.map(({ id, name }) => {
     return <ChannelListItem key={id}># {name}</ChannelListItem>;
   });
@@ -55,7 +61,9 @@ const Channels = ({ channels, messages, teamName, username }) => {
         <p>{username}</p>
       </div>
       <div>
-        <p>Channels</p>
+        <p>
+          Channels <Icon onClick={onAddChannelClick} name="add circle" />
+        </p>
         <ChannelList>{channelList}</ChannelList>
       </div>
       <div>

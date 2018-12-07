@@ -13,11 +13,13 @@ import SideBar from "../containers/Sidebar";
 
 const channel = "partytime";
 
-export default () => (
+const ViewTeam = ({ match: { params } }) => (
   <AppLayout>
-    <SideBar currentTeamId={11} />
+    <SideBar currentTeamId={params.teamId} />
     <Header channel={"partytime"} />
     <Messages>Messages</Messages>
     <Input channel={channel} />
   </AppLayout>
 );
+
+export default ViewTeam;
